@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Derrick's Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #121212;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      margin: 0.5rem 0;
+    }
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skills img {
+      height: 30px;
+    }
+    .contact {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .socials a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .socials a:hover {
+      color: #0077b5;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: #121212;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profile">
+      <img src="1739524595715.jpeg" alt="Derrick Juma" />
+      <h1>Derrick Juma</h1>
+      <p>Flutter Developer | Backend Dev | Tech Enthusiast</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate Flutter developer with a strong background in backend development using FastAPI and PostgreSQL. I love building apps that solve real-world problems, especially for students. I'm currently working on Unistay – a student housing recommendation app.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Unistay App</h3>
+        <p>A Flutter app that predicts rent and recommends housing for students based on preferences like distance, affordability, and room type.</p>
+        <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>Student Rent Predictor (API)</h3>
+        <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing options.</p>
+        <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank">View GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Simple Weather App</h3>
+        <p>A simple flutter weather app using open weather API with dark mode and light mode feature enabled.</p>
+        <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank">View GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+      <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
+      <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: derekjude254@gmail.com</p>
+    <p>Phone: 0117598248</p>
+    <div class="socials">
+        <a href="https://github.com/Jude254-programmer" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank">
+          <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+        </a>
+      </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Derrick Juma. Built with HTML & ❤️.</p>
+  </footer>
+</body>
+</html>
