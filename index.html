@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="1739524595715.jpeg" type="image/jpeg">
   <title>Derrick's Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,6 +13,11 @@
       padding: 0;
       background: #f4f4f4;
       color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #f4f4f4;
     }
     header {
       background: #121212;
@@ -53,6 +59,9 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+    .dark-mode .project {
+      background: #1e1e1e;
+    }
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -66,11 +75,17 @@
       padding: 1rem;
       border-radius: 8px;
     }
+    .dark-mode .contact {
+      background: #1e1e1e;
+    }
     .socials a {
       margin-right: 1rem;
       text-decoration: none;
       color: #333;
       font-weight: bold;
+    }
+    .dark-mode .socials a {
+      color: #f4f4f4;
     }
     .socials a:hover {
       color: #0077b5;
@@ -82,6 +97,17 @@
       background: #121212;
       color: #aaa;
     }
+    .toggle-theme {
+      margin: 1rem auto;
+      display: block;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #0077b5;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -90,38 +116,42 @@
       <img src="1739524595715.jpeg" alt="Derrick Juma" />
       <h1>Derrick Juma</h1>
       <p>Flutter Developer | Backend Dev | Tech Enthusiast</p>
+      <button class="toggle-theme" onclick="toggleTheme()" id="theme-toggle-btn">🌙 Toggle Theme</button>
     </div>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>About Me</h2>
     <p>
       I'm a passionate Flutter developer with a strong background in backend development using FastAPI and PostgreSQL. I love building apps that solve real-world problems, especially for students. I'm currently working on Unistay – a student housing recommendation app.
     </p>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Projects</h2>
     <div class="projects">
       <div class="project">
         <h3>Unistay App</h3>
         <p>A Flutter app that predicts rent and recommends housing for students based on preferences like distance, affordability, and room type.</p>
-        <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank">View Project</a>
+        <p><strong>Tech:</strong> Flutter, FastAPI, PostgreSQL</p>
+        <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank">GitHub</a>
       </div>
       <div class="project">
         <h3>Student Rent Predictor (API)</h3>
         <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing options.</p>
-        <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank">View GitHub</a>
+        <p><strong>Tech:</strong> FastAPI, Machine Learning, PostgreSQL</p>
+        <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank">GitHub</a>
       </div>
       <div class="project">
         <h3>Simple Weather App</h3>
         <p>A simple flutter weather app using open weather API with dark mode and light mode feature enabled.</p>
-        <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank">View GitHub</a>
+        <p><strong>Tech:</strong> Flutter, OpenWeatherMap API</p>
+        <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank">GitHub</a>
       </div>
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skills">
       <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
@@ -133,22 +163,59 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <p>Email: derekjude254@gmail.com</p>
     <p>Phone: 0117598248</p>
+    <p><a href="resume_derrick_juma.pdf" download>📄 Download My Resume</a></p>
     <div class="socials">
-        <a href="https://github.com/Jude254-programmer" target="_blank">
-          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-        </a>
-        <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank">
-          <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-        </a>
-      </div>
+      <a href="https://github.com/Jude254-programmer" target="_blank">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+      </a>
+    </div>
+  </section>
+
+  <section data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <blockquote>“Derrick is one of the most dedicated developers I’ve had the pleasure to work with.” – Tech Peer</blockquote>
   </section>
 
   <footer>
     <p>&copy; 2025 Derrick Juma. Built with HTML & ❤️.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Theme toggle logic with icon switch and localStorage support
+    const body = document.body;
+    const themeButton = document.getElementById('theme-toggle-btn');
+
+    function setTheme(dark) {
+      if (dark) {
+        body.classList.add('dark-mode');
+        themeButton.innerHTML = '☀️ Light Mode';
+      } else {
+        body.classList.remove('dark-mode');
+        themeButton.innerHTML = '🌙 Dark Mode';
+      }
+      localStorage.setItem('darkMode', dark ? 'true' : 'false');
+    }
+
+    function toggleTheme() {
+      const isDark = body.classList.contains('dark-mode');
+      setTheme(!isDark);
+    }
+
+    // Load theme from localStorage on page load
+    window.onload = () => {
+      const savedTheme = localStorage.getItem('darkMode') === 'true';
+      setTheme(savedTheme);
+    };
+  </script>
 </body>
 </html>
