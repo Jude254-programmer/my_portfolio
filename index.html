@@ -1,221 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="1739524595715.jpeg" type="image/jpeg">
-  <title>Derrick's Portfolio</title>
+  <title>Derrick Juma - Mobile Developer | | Data Science Enthusiast</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
-    }
-    .dark-mode {
-      background: #121212;
-      color: #f4f4f4;
-    }
-    header {
-      background: #121212;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-    .profile img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 4px solid #fff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      margin: 0.5rem 0;
-    }
-    .projects {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .project {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .dark-mode .project {
-      background: #1e1e1e;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skills img {
-      height: 30px;
-    }
-    .contact {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    .dark-mode .contact {
-      background: #1e1e1e;
-    }
-    .socials a {
-      margin-right: 1rem;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .dark-mode .socials a {
-      color: #f4f4f4;
-    }
-    .socials a:hover {
-      color: #0077b5;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background: #121212;
-      color: #aaa;
-    }
-    .toggle-theme {
-      margin: 1rem auto;
-      display: block;
-      padding: 0.5rem 1rem;
-      border: none;
-      background: #0077b5;
-      color: #fff;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="profile">
-      <img src="1739524595715.jpeg" alt="Derrick Juma" />
-      <h1>Derrick Juma</h1>
-      <p>Flutter Developer | Backend Dev | Tech Enthusiast</p>
-      <button class="toggle-theme" onclick="toggleTheme()" id="theme-toggle-btn">🌙 Toggle Theme</button>
-    </div>
-  </header>
-
-  <section data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate Flutter developer with skills in backend development using FastAPI and PostgreSQL and also good at prompt engineering. I love building apps that solve real-world problems. I'm currently working on Unistay – a student housing recommendation app.
-    </p>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Unistay App</h3>
-        <p>A Flutter app that predicts rent and recommends housing for students based on preferences like distance, affordability, and room type.</p>
-        <p><strong>Tech:</strong> Flutter, FastAPI, PostgreSQL</p>
-        <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank">GitHub</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>DJ</span>
       </div>
-      <div class="project">
-        <h3>Student Rent Predictor (API)</h3>
-        <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing options.</p>
-        <p><strong>Tech:</strong> FastAPI, Machine Learning, PostgreSQL</p>
-        <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank">GitHub</a>
-      </div>
-      <div class="project">
-        <h3>Simple Weather App</h3>
-        <p>A simple flutter weather app using open weather API with dark mode and light mode feature enabled.</p>
-        <p><strong>Tech:</strong> Flutter, OpenWeatherMap API</p>
-        <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank">GitHub</a>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle">🌙</button></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <section data-aos="fade-up">
-    <h2>Skills</h2>
-    <div class="skills">
-      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
-      <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
-      <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
-      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-image">
+          <img src="1739524595715.jpeg" alt="Derrick Juma" />
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Derrick Juma</span>
+        </h1>
+        <p class="hero-subtitle">Mobile Software Engineer • Data Science Enthusiast • </p>
+        <p class="hero-description">
+          I'm a Mobile software engineer with a focus on Flutter, Kotlin, backend systems, and clean code. Building
+          seamless digital experiences from idea to deployment.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <p>Email: derekjude254@gmail.com</p>
-    <p>Phone: 0117598248</p>
-    <p><a href="assets/resume.pdf" download>📄 Download My Resume</a></p>
-    <div class="socials">
-      <a href="https://github.com/Jude254-programmer" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-      </a>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p class="section-subtitle">Passionate about creating impactful solutions</p>
+      </div>
+      <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-text">
+          <p>
+            I'm passionate and driven mobile software developer with a focus on Flutter, Kotlin and backend development.
+            I enjoy building modern, high-performance apps that solve real-world problems with clean architecture and
+            smooth user experiences
+          </p>
+          <p>
+            Beyond mobile development, I’m also exploring the exciting world of data science, machine learning and Web
+            development. I’ve
+            worked on predictive systems like a student housing recommendation engine, applying algorithms such as
+            Random Forest and XGBoost to uncover insights and enhance decision-making.
+          </p>
+          <p>
+            I’m always learning, constantly improving, and looking for innovative ways to blend technology, data, and
+            user-centric design to create impactful solutions. Whether it’s developing mobile apps, working with APIs,
+            or training ML models, I love what I do and am excited for what’s next.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>3+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat">
+              <h3>1+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat">
+              <h3>6+</h3>
+              <p>Technologies</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section data-aos="fade-up">
-    <h2>Testimonials</h2>
-    <blockquote>“Derrick is one of the most dedicated developers I’ve had the pleasure to work with.” – Tech Peer</blockquote>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Featured Projects</h2>
+        <p class="section-subtitle">Some of my recent work</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <div class="project-placeholder">📱</div>
+          </div>
+          <div class="project-content">
+            <h3>Unistay App</h3>
+            <p>A Flutter app that predicts rent and recommends housing for students based on preferences like distance,
+              affordability, and room type.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank"
+                class="project-link">
+                <span>View Code</span>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <div class="project-placeholder">🔗</div>
+          </div>
+          <div class="project-content">
+            <h3>Student Rent Predictor API</h3>
+            <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing
+              options.</p>
+            <div class="project-tech">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank"
+                class="project-link">
+                <span>View Code</span>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <div class="project-placeholder">🌤️</div>
+          </div>
+          <div class="project-content">
+            <h3>Simple Weather App</h3>
+            <p>A beautiful Flutter weather app using OpenWeather API with dark mode and light mode features for enhanced
+              user experience.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">OpenWeather API</span>
+              <span class="tech-tag">Dart</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank" class="project-link">
+                <span>View Code</span>
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Derrick Juma. Built with HTML & ❤️.</p>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Skills & Technologies</h2>
+        <p class="section-subtitle">Tools I use to bring ideas to life</p>
+      </div>
+      <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-category">
+          <h3>Frontend & Mobile</h3>
+          <div class="skill-items">
+            <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"
+              alt="Flutter" />
+            <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"
+              alt="Dart" />
+            <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"
+              alt="Kotlin" />
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+              alt="Python" />
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+              alt="HTML5" />
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+              alt="CSS3" />
+
+
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend & Database</h3>
+          <div class="skill-items">
+            <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"
+              alt="Firebase" />
+
+            <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"
+              alt="FastAPI" />
+            <img
+              src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"
+              alt="PostgreSQL" />
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Tools,Design and IDEs</h3>
+          <div class="skill-items">
+            <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"
+              alt="Figma" />
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+              alt="GitHub" />
+            <img
+              src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
+              alt="VS Code" />
+            <img
+              src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"
+              alt="Android Studio" />
+            <img src="https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white"
+              alt="PyCharm" />
+            <img
+              src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"
+              alt="IntelliJ IDEA" />
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>Let's Work Together</h2>
+        <p class="section-subtitle">Ready to bring your next project to life?</p>
+      </div>
+      <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:derekjude254@gmail.com">derekjude254@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <a href="tel:0117598248">0117598248</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📄</div>
+            <div class="contact-details">
+              <h3>Resume</h3>
+              <a href="assets/resume.pdf" download>Download CV</a>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Jude254-programmer" target="_blank" class="social-link">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank" class="social-link">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://twitter.com/Jude1110641" target="_blank" class="social-link">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.57 8.57 0 01-2.72 1.03 4.27 4.27 0 00-7.3 3.89A12.1 12.1 0 013 4.89a4.27 4.27 0 001.32 5.7 4.27 4.27 0 01-1.93-.53v.05a4.27 4.27 0 003.43 4.18 4.3 4.3 0 01-1.93.07 4.27 4.27 0 003.98 2.96A8.57 8.57 0 012 19.54a12.06 12.06 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2v-.56A8.75 8.75 0 0024 5.3a8.5 8.5 0 01-2.54.7z" />
+            </svg>
+            <span>X</span>
+          </a>
+          <a href="https://www.instagram.com/jude254.dev" target="_blank" class="social-link">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a.75.75 0 110 1.5.75.75 0 010-1.5z" />
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://wa.me/0796248566" target="_blank" class="social-link">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M16.72 13.06c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15s-.73.93-.9 1.12c-.16.18-.33.2-.62.07-.29-.15-1.24-.46-2.36-1.47-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.5.14-.17.19-.28.29-.47.1-.2.05-.37-.02-.52-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.49h-.55c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.27.5 1.7.64.71.23 1.35.2 1.86.12.57-.08 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35zM12.04 2C6.49 2 2 6.48 2 12.03c0 1.93.51 3.73 1.48 5.34L2 22l4.76-1.46A10.03 10.03 0 0012.04 22C17.52 22 22 17.52 22 12.03 22 6.48 17.52 2 12.04 2z" />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Derrick Juma. Crafted with passion and code ❤️</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    // Theme toggle logic with icon switch and localStorage support
-    const body = document.body;
-    const themeButton = document.getElementById('theme-toggle-btn');
-
-    function setTheme(dark) {
-      if (dark) {
-        body.classList.add('dark-mode');
-        themeButton.innerHTML = '☀️ Light Mode';
-      } else {
-        body.classList.remove('dark-mode');
-        themeButton.innerHTML = '🌙 Dark Mode';
-      }
-      localStorage.setItem('darkMode', dark ? 'true' : 'false');
-    }
-
-    function toggleTheme() {
-      const isDark = body.classList.contains('dark-mode');
-      setTheme(!isDark);
-    }
-
-    // Load theme from localStorage on page load
-    window.onload = () => {
-      const savedTheme = localStorage.getItem('darkMode') === 'true';
-      setTheme(savedTheme);
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
