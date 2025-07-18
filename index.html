@@ -5,30 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="1739524595715.jpeg" type="image/jpeg">
-  <title>Derrick Juma - Mobile Developer | | Data Science Enthusiast</title>
+  <title>Derrick Juma - Junior Software Engineer | Data Science Enthusiast</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Jude</div>
+    </div>
+  </div>
+
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <span>DJ</span>
+        <span class="logo-text">Jude</span>
+        <div class="logo-glow"></div>
       </div>
-      <ul class="nav-menu">
-        <li><a href="#home" class="nav-link">Home</a></li>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><button class="theme-toggle" id="theme-toggle">🌙</button></li>
+        <li class="theme-toggle-container">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
       </ul>
-      <div class="hamburger">
+      <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -38,23 +53,75 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+    </div>
     <div class="hero-container">
       <div class="hero-content" data-aos="fade-up">
-        <div class="hero-image">
-          <img src="1739524595715.jpeg" alt="Derrick Juma" />
+        <div class="hero-image-container">
+          <div class="hero-image">
+            <img src="assets/images/portfolio.png" alt="Derrick Juma" />
+            <div class="image-glow"></div>
+            <div class="image-border"></div>
+          </div>
+          <div class="hero-status">
+            <div class="status-dot"></div>
+            <span>Available for opportunities</span>
+          </div>
         </div>
-        <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Derrick Juma</span>
-        </h1>
-        <p class="hero-subtitle">Mobile Software Engineer • Data Science Enthusiast • </p>
-        <p class="hero-description">
-          I'm a Mobile software engineer with a focus on Flutter, Kotlin, backend systems, and clean code. Building
-          seamless digital experiences from idea to deployment.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="greeting">Hi, I'm</span>
+            <span class="name gradient-text">Derrick Juma</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typing-text" id="typing-text"></span>
+            <span class="cursor">|</span>
+          </div>
+          <div class="hero-terminal">
+            <pre class="terminal-effect"><span class="prompt">$</span> <span id="terminal-code">npx create-mobile-app --template=flutter-kotlin</span><span class="blinking-cursor">|</span></pre>
+          </div>
+          <p class="hero-description">
+            Building robust mobile & data-driven solutions. Passionate about Flutter, Kotlin, and Data Science. Always learning, always shipping.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get In Touch</span>
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="assets/resume.pdf" class="btn btn-secondary" download>
+              <span>Download Resume</span>
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="2">0</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <span>Scroll Down</span>
       </div>
     </div>
   </section>
@@ -63,40 +130,53 @@
   <section id="about" class="about">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <h2>About Me</h2>
+        <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">Passionate about creating impactful solutions</p>
       </div>
       <div class="about-content" data-aos="fade-up" data-aos-delay="200">
         <div class="about-text">
-          <p>
-            I'm passionate and driven mobile software developer with a focus on Flutter, Kotlin and backend development.
-            I enjoy building modern, high-performance apps that solve real-world problems with clean architecture and
-            smooth user experiences
-          </p>
-          <p>
-            Beyond mobile development, I’m also exploring the exciting world of data science, machine learning and Web
-            development. I’ve
-            worked on predictive systems like a student housing recommendation engine, applying algorithms such as
-            Random Forest and XGBoost to uncover insights and enhance decision-making.
-          </p>
-          <p>
-            I’m always learning, constantly improving, and looking for innovative ways to blend technology, data, and
-            user-centric design to create impactful solutions. Whether it’s developing mobile apps, working with APIs,
-            or training ML models, I love what I do and am excited for what’s next.
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <h3>3+</h3>
-              <p>Projects Completed</p>
+          <div class="about-paragraph">
+            <p>
+              Aspiring Mobile Software Engineer skilled in Flutter, exploring Kotlin and backend development.
+              I'm passionate about building smooth, scalable apps using clean architecture and great design. Currently growing through hands-on projects and open collaboration, I’m eager to contribute to real-world solutions and advance in the mobile development space.
+            </p>
+          </div>
+          <div class="about-paragraph">
+            <p>
+              Beyond mobile development, I'm also exploring the exciting world of data science and machine learning. 
+              I've worked on predictive systems like a student housing recommendation engine, applying algorithms such as
+              Random Forest and XGBoost to uncover insights and enhance decision-making.
+            </p>
+          </div>
+          <div class="about-paragraph">
+            <p>
+              I'm always learning, constantly improving, and looking for innovative ways to blend technology, data, and
+              user-centric design to create impactful solutions. Whether it's developing mobile apps, working with APIs,
+              or training ML models, I love what I do and am excited for what's next.
+            </p>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
             </div>
-            <div class="stat">
-              <h3>1+</h3>
-              <p>Years Experience</p>
+            <h3>Clean Code</h3>
+            <p>Writing maintainable and scalable code</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-mobile-alt"></i>
             </div>
-            <div class="stat">
-              <h3>6+</h3>
-              <p>Technologies</p>
+            <h3>Mobile First</h3>
+            <p>Creating seamless mobile experiences</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-brain"></i>
             </div>
+            <h3>Problem Solver</h3>
+            <p>Finding innovative solutions to complex problems</p>
           </div>
         </div>
       </div>
@@ -107,83 +187,225 @@
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <h2>Featured Projects</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <p class="section-subtitle">Some of my recent work</p>
       </div>
-      <div class="projects-grid">
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="projects-filter" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+      </div>
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+        <!-- Unistay App -->
+        <div class="project-card" data-category="mobile ml" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image">
-            <div class="project-placeholder">📱</div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">Featured</div>
+            <img src="https://via.placeholder.com/400x250/3b82f6/ffffff?text=Unistay+App" alt="Unistay App" />
           </div>
           <div class="project-content">
-            <h3>Unistay App</h3>
+            <div class="project-header">
+              <h3>Unistay App</h3>
+              <div class="project-type">Mobile App</div>
+            </div>
             <p>A Flutter app that predicts rent and recommends housing for students based on preferences like distance,
               affordability, and room type.</p>
             <div class="project-tech">
               <span class="tech-tag">Flutter</span>
               <span class="tech-tag">FastAPI</span>
               <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">ML</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Jude254-programmer/house_recommendation_app" target="_blank"
-                class="project-link">
-                <span>View Code</span>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-              </a>
+            <div class="project-features">
+              <span class="feature">Real-time predictions</span>
+              <span class="feature">Personalized recommendations</span>
+              <span class="feature">Clean UI/UX</span>
             </div>
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <!-- ShopMate App -->
+        <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="120">
           <div class="project-image">
-            <div class="project-placeholder">🔗</div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">New</div>
+            <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=ShopMate+App" alt="ShopMate App" />
           </div>
           <div class="project-content">
-            <h3>Student Rent Predictor API</h3>
-            <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing
-              options.</p>
+            <div class="project-header">
+              <h3>ShopMate</h3>
+              <div class="project-type">Mobile App</div>
+            </div>
+            <p>An app that helps small retail business owners manage sales, track profit, and generate comprehensive sales reports with intuitive analytics.</p>
             <div class="project-tech">
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">Machine Learning</span>
-              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">SQLite</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank"
-                class="project-link">
-                <span>View Code</span>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-              </a>
+            <div class="project-features">
+              <span class="feature">Sales management</span>
+              <span class="feature">Profit tracking</span>
+              <span class="feature">Sales reports</span>
             </div>
           </div>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <!-- SmartPace App -->
+        <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="140">
           <div class="project-image">
-            <div class="project-placeholder">🌤️</div>
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">New</div>
+            <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=SmartPace+App" alt="SmartPace App" />
           </div>
           <div class="project-content">
-            <h3>Simple Weather App</h3>
-            <p>A beautiful Flutter weather app using OpenWeather API with dark mode and light mode features for enhanced
-              user experience.</p>
+            <div class="project-header">
+              <h3>SmartPace</h3>
+              <div class="project-type">Mobile App</div>
+            </div>
+            <p>A student study planner that helps students plan their study schedule, set reminders, collaborate, and join study groups for enhanced learning.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+            </div>
+            <div class="project-features">
+              <span class="feature">Study scheduling</span>
+              <span class="feature">Reminders</span>
+              <span class="feature">Collaboration</span>
+              <span class="feature">Study groups</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather App -->
+        <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">UI/UX</div>
+            <img src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Weather+App" alt="Weather App" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Simple Weather App</h3>
+              <div class="project-type">Mobile App</div>
+            </div>
+            <p>A beautiful Flutter weather app using OpenWeather API with dark mode and light mode features for enhanced user experience.</p>
             <div class="project-tech">
               <span class="tech-tag">Flutter</span>
               <span class="tech-tag">OpenWeather API</span>
               <span class="tech-tag">Dart</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/Jude254-programmer/Simple-Weather-app" target="_blank" class="project-link">
-                <span>View Code</span>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-              </a>
+            <div class="project-features">
+              <span class="feature">Real-time weather</span>
+              <span class="feature">Dark/Light mode</span>
+              <span class="feature">Location-based</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Rent Predictor API -->
+        <div class="project-card" data-category="ml web" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Jude254-programmer/housing_recommendation" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">ML</div>
+            <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Rent+Predictor+API" alt="Rent Predictor API" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Student Rent Predictor API</h3>
+              <div class="project-type">Backend API</div>
+            </div>
+            <p>A FastAPI backend using XGBoost and Random Forest models to predict rent prices and recommend housing options.</p>
+            <div class="project-tech">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="project-features">
+              <span class="feature">ML Models</span>
+              <span class="feature">RESTful API</span>
+              <span class="feature">Data Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Website -->
+        <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-badge">Portfolio</div>
+            <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Portfolio+Website" alt="Portfolio Website" />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Modern Portfolio Website</h3>
+              <div class="project-type">Web App</div>
+            </div>
+            <p>A modern, responsive portfolio website with smooth animations, dark/light mode, and interactive elements.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">AOS</span>
+            </div>
+            <div class="project-features">
+              <span class="feature">Responsive design</span>
+              <span class="feature">Smooth animations</span>
+              <span class="feature">Theme switching</span>
             </div>
           </div>
         </div>
@@ -195,62 +417,294 @@
   <section id="skills" class="skills">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <h2>Skills & Technologies</h2>
+        <h2 class="section-title">Skills & Technologies</h2>
         <p class="section-subtitle">Tools I use to bring ideas to life</p>
       </div>
-      <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-category">
-          <h3>Frontend & Mobile</h3>
+    
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+              <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="category-header">
+                  <i class="fas fa-mobile-alt"></i>
+                  <h3>Mobile Development</h3>
+                </div>
+                <div class="skill-items">
+                  <div class="skill-item" title="Cross-platform UI toolkit for building natively compiled apps">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Flutter</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Modern language for Android development">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/kotlin/7F52FF" alt="Kotlin" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Kotlin</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Programming language optimized for UI">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/dart/0175C2" alt="Dart" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Dart</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="88"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Modern Android UI toolkit">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/android/3DDC84" alt="Jetpack Compose" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Jetpack Compose</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="80"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Data Science Category -->
+              <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+                <div class="category-header">
+                  <i class="fas fa-chart-line"></i>
+                  <h3>Data Science</h3>
+                </div>
+                <div class="skill-items">
+                  <div class="skill-item" title="General-purpose programming language for data science">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Python</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Building and deploying machine learning models">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="Machine Learning" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Machine Learning</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Extracting insights from data">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/analytics/000000" alt="Data Analysis" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Data Analysis</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Data manipulation and analysis library">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/pandas/150458" alt="Pandas" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Pandas</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="85"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Numerical computing library">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/numpy/013243" alt="NumPy" width="24" height="24">
+                    </div>
+                    <span class="skill-name">NumPy</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Machine learning library">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Scikit-learn</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="75"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Deep learning framework">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" width="24" height="24">
+                    </div>
+                    <span class="skill-name">TensorFlow</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="75"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item" title="Interactive computing environment">
+                    <div class="skill-icon">
+                      <img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter" width="24" height="24">
+                    </div>
+                    <span class="skill-name">Jupyter</span>
+                    <div class="skill-level">
+                      <div class="skill-bar" data-level="70"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend & Database</h3>
+          </div>
           <div class="skill-items">
-            <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"
-              alt="Flutter" />
-            <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"
-              alt="Dart" />
-            <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"
-              alt="Kotlin" />
-            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
-              alt="Python" />
-            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-              alt="HTML5" />
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-              alt="CSS3" />
-
-
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="fab fa-python"></i>
+              </div>
+              <span>Python</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-level="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="fas fa-fire"></i>
+              </div>
+              <span>Firebase</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-level="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <span>PostgreSQL</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-level="75"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3>Backend & Database</h3>
-          <div class="skill-items">
-            <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"
-              alt="Firebase" />
 
-            <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"
-              alt="FastAPI" />
-            <img
-              src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"
-              alt="PostgreSQL" />
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-header">
+            <i class="fas fa-tools"></i>
+           <h3>Tools & Design</h3>
+</div>
+<div class="skill-items">
+  <div class="skill-item">
+    <div class="skill-icon">
+      <i class="fab fa-figma"></i>
+    </div>
+    <span>Figma</span>
+    <div class="skill-level">
+      <div class="skill-bar" data-level="70"></div>
+    </div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-icon">
+      <i class="fab fa-git-alt"></i>
+    </div>
+    <span>Git</span>
+    <div class="skill-level">
+      <div class="skill-bar" data-level="85"></div>
+    </div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-icon">
+      <i class="fas fa-code"></i>
+    </div>
+    <span>VS Code</span>
+    <div class="skill-level">
+      <div class="skill-bar" data-level="90"></div>
+    </div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-icon">
+      <img src="https://cdn.simpleicons.org/androidstudio/3DDC84" alt="Android Studio" width="24" height="24">
+    </div>
+    <span>Android Studio</span>
+    <div class="skill-level">
+      <div class="skill-bar" data-level="90"></div>
+    </div>
+  </div>
+  <div class="skill-item">
+    <div class="skill-icon">
+      <img src="https://cdn.simpleicons.org/intellijidea/000000" alt="IntelliJ IDEA" width="24" height="24">
+    </div>
+    <span>IntelliJ IDEA</span>
+    <div class="skill-level">
+      <div class="skill-bar" data-level="85"></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+      </div>  
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Experience & Education</h2>
+        <p class="section-subtitle">My journey in tech</p>
+      </div>
+      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Mobile Developer</h3>
+              <span class="timeline-date">2023 - Present</span>
+            </div>
+            <div class="timeline-company">Freelance</div>
+            <p>Developing mobile applications using Flutter and Kotlin, focusing on clean architecture and user experience.</p>
+            <div class="timeline-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Firebase</span>
+            </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3>Tools,Design and IDEs</h3>
-          <div class="skill-items">
-            <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"
-              alt="Figma" />
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-              alt="GitHub" />
-            <img
-              src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
-              alt="VS Code" />
-            <img
-              src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white"
-              alt="Android Studio" />
-            <img src="https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white"
-              alt="PyCharm" />
-            <img
-              src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"
-              alt="IntelliJ IDEA" />
 
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Data Science Projects</h3>
+              <span class="timeline-date">2023 - Present</span>
+            </div>
+            <div class="timeline-company">Personal Projects</div>
+            <p>Working on machine learning projects including housing recommendation systems and predictive analytics.</p>
+            <div class="timeline-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">XGBoost</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>Data Science Degree</h3>
+              <span class="timeline-date">2024 - Present</span>
+            </div>
+            <div class="timeline-company">University</div>
+            <p>Currently pursuing a Bachelor's degree in Data Science with focus on machine learning, statistical analysis, and data visualization.</p>
+            <div class="timeline-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Data visualization</span>
+              <span class="tech-tag">Macine Learning</span>
+              <span class="tech-tag">Statistics</span>
+              <span class="tech-tag">Data Science</span>
+              <span class="tech-tag">Data Analysis</span>
+
+            </div>
           </div>
         </div>
       </div>
@@ -261,81 +715,86 @@
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <h2>Let's Work Together</h2>
+        <h2 class="section-title">Let's Work Together</h2>
         <p class="section-subtitle">Ready to bring your next project to life?</p>
       </div>
       <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
         <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">📧</div>
+          <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
             <div class="contact-details">
               <h3>Email</h3>
               <a href="mailto:derekjude254@gmail.com">derekjude254@gmail.com</a>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon">📱</div>
+          <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
             <div class="contact-details">
               <h3>Phone</h3>
               <a href="tel:0117598248">0117598248</a>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon">📄</div>
+          <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
             <div class="contact-details">
               <h3>Resume</h3>
               <a href="assets/resume.pdf" download>Download CV</a>
             </div>
           </div>
         </div>
-        <div class="social-links">
-          <a href="https://github.com/Jude254-programmer" target="_blank" class="social-link">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank" class="social-link">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-            </svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://twitter.com/Jude1110641" target="_blank" class="social-link">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.57 8.57 0 01-2.72 1.03 4.27 4.27 0 00-7.3 3.89A12.1 12.1 0 013 4.89a4.27 4.27 0 001.32 5.7 4.27 4.27 0 01-1.93-.53v.05a4.27 4.27 0 003.43 4.18 4.3 4.3 0 01-1.93.07 4.27 4.27 0 003.98 2.96A8.57 8.57 0 012 19.54a12.06 12.06 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2v-.56A8.75 8.75 0 0024 5.3a8.5 8.5 0 01-2.54.7z" />
-            </svg>
-            <span>X</span>
-          </a>
-          <a href="https://www.instagram.com/jude254.dev" target="_blank" class="social-link">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a.75.75 0 110 1.5.75.75 0 010-1.5z" />
-            </svg>
-            <span>Instagram</span>
-          </a>
-          <a href="https://wa.me/0796248566" target="_blank" class="social-link">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M16.72 13.06c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15s-.73.93-.9 1.12c-.16.18-.33.2-.62.07-.29-.15-1.24-.46-2.36-1.47-.87-.77-1.46-1.72-1.63-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.5.14-.17.19-.28.29-.47.1-.2.05-.37-.02-.52-.07-.15-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.49h-.55c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.1 4.48.71.31 1.27.5 1.7.64.71.23 1.35.2 1.86.12.57-.08 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.35zM12.04 2C6.49 2 2 6.48 2 12.03c0 1.93.51 3.73 1.48 5.34L2 22l4.76-1.46A10.03 10.03 0 0012.04 22C17.52 22 22 17.52 22 12.03 22 6.48 17.52 2 12.04 2z" />
-            </svg>
-            <span>WhatsApp</span>
-          </a>
-
-        </div>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+  <a href="https://github.com/Jude254-programmer" target="_blank" class="social-link">
+    <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" width="24" height="24">
+    <span>GitHub</span>
+ </a>
+   <a href="https://www.linkedin.com/in/derrick-juma-840529311/" target="_blank" class="social-link">
+    <i class="fab fa-linkedin"></i>
+    <span>LinkedIn</span>
+  </a>
+  <a href="https://twitter.com/Jude1110641" target="_blank" class="social-link">
+    <img src="https://cdn.simpleicons.org/x/000000" alt="X" width="24" height="24">
+    <span>X</span>
+  </a>
+  <a href="https://www.instagram.com/jude254.dev" target="_blank" class="social-link">
+    <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" width="24" height="24">
+    <span>Instagram</span>
+  </a>
+  <a href="https://wa.me/0796248566" target="_blank" class="social-link">
+    <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" width="24" height="24">
+    <span>WhatsApp</span>
+  </a>
+</div>
       </div>
-    </div>
+    </div>                    
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Derrick Juma. Crafted with passion and code ❤️</p>
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Derrick Juma. Crafted with <i class="fas fa-heart"></i> and code</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
